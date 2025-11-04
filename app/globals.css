@@ -24,3 +24,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+strong {
+  font-size: 1.1em;
+  color: #d8b661
+}
+
+.bg-spin {
+  animation: bg-spin 60s linear infinite;
+}
+
+.bg-spin-reverse {
+  animation: bg-spin 60s linear infinite reverse;
+}
+
+@keyframes bg-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
