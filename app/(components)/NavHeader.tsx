@@ -57,14 +57,14 @@ export default function NavMenu() {
 
                     {/* Bouton mobile */}
                     <button
-                        className="md:hidden p-2 rounded hover:bg-gray-100"
+                        className="md:hidden p-2 rounded hover:bg-white/10 text-2xl" // TAILLE AJUSTÉE (text-2xl)
                         onClick={() => setMobileOpen(!mobileOpen)}
                         aria-label="Ouvrir le menu"
                     >
                         {mobileOpen ? "✕" : "☰"}
                     </button>
 
-                    {/* Menu Desktop */}
+                    {/* Menu Desktop (Inchangé) */}
                     <ul className="hidden md:flex space-x-8">
                         {menu.map((item) => (
                             <li key={item.title} className="relative group">
@@ -75,7 +75,7 @@ export default function NavMenu() {
                                             onMouseLeave={() => setOpenMenu(null)}
                                             aria-haspopup="true"
                                             aria-expanded={openMenu === item.title}
-                                            className="flex items-center gap-1 hover:text-yellow-600 transition-colors"
+                                            className="flex items-center gap-1 hover:text-[#d8b661] transition-colors"
                                         >
                                             {item.title}
                                             <span className="text-xs">▼</span>
@@ -90,7 +90,7 @@ export default function NavMenu() {
                                                     animate={{ opacity: 1, y: 0 }}
                                                     exit={{ opacity: 0, y: -10 }}
                                                     transition={{ duration: 0.15, ease: "easeOut" }}
-                                                    className="absolute left-0 mt-2 backdrop-blur-sm border border-gray-200 rounded-md shadow-lg w-44 z-50"
+                                                    className="absolute left-0 mt-2 bg-black/70 backdrop-blur-md border border-gray-700 rounded-md shadow-lg w-44 z-50 text-white" // COULEURS AJUSTÉES
                                                     onMouseEnter={() => setOpenMenu(item.title)}
                                                     onMouseLeave={() => setOpenMenu(null)}
                                                 >
@@ -98,7 +98,7 @@ export default function NavMenu() {
                                                         <li key={child.title}>
                                                             <Link
                                                                 href={child.href || "#"}
-                                                                className="block p-4 hover:text-yellow-400 text-sm"
+                                                                className="block p-4 hover:text-[#d8b661] text-sm" // HOVER AJUSTÉ
                                                             >
                                                                 {child.title}
                                                             </Link>
@@ -111,7 +111,7 @@ export default function NavMenu() {
                                 ) : (
                                     <Link
                                         href={item.href || "#"}
-                                        className="hover:text-yellow-600 transition-colors"
+                                        className="hover:text-[#d8b661] transition-colors"
                                     >
                                         {item.title}
                                     </Link>
@@ -130,18 +130,18 @@ export default function NavMenu() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="fixed inset-0 bg-white/95 backdrop-blur-sm z-50 flex flex-col items-start p-6 overflow-y-auto"
+                            className="fixed inset-0 bg-black z-50 flex flex-col items-start p-6 overflow-y-auto text-white" // COULEURS AJUSTÉES
                         >
                             <div className="flex justify-between w-full mb-6">
                                 <Link
                                     href="/"
-                                    className="text-xl font-semibold tracking-tight"
+                                    className="text-2xl font-semibold tracking-tight text-[#d8b661]" // COULEURS AJUSTÉES
                                     onClick={() => setMobileOpen(false)}
                                 >
-                                    Nom du site
+                                    Table Quest
                                 </Link>
                                 <button
-                                    className="text-2xl"
+                                    className="text-3xl text-white hover:text-[#d8b661]" // TAILLE ET COULEUR AJUSTÉES
                                     onClick={() => setMobileOpen(false)}
                                     aria-label="Fermer le menu"
                                 >
@@ -156,7 +156,7 @@ export default function NavMenu() {
                                             <>
                                                 <button
                                                     onClick={() => toggleSubMenu(item.title)}
-                                                    className="flex justify-between w-full text-left text-lg font-medium hover:text-blue-600"
+                                                    className="flex justify-between w-full text-left text-xl font-medium hover:text-[#d8b661] py-1" // HOVER AJUSTÉ
                                                 >
                                                     {item.title}
                                                     <span>{openMenu === item.title ? "▲" : "▼"}</span>
@@ -170,14 +170,14 @@ export default function NavMenu() {
                                                             animate={{ height: "auto", opacity: 1 }}
                                                             exit={{ height: 0, opacity: 0 }}
                                                             transition={{ duration: 0.25, ease: "easeInOut" }}
-                                                            className="ml-4 mt-2 space-y-2 overflow-hidden"
+                                                            className="ml-4 mt-2 space-y-2 overflow-hidden text-gray-300"
                                                         >
                                                             {item.children.map((child) => (
                                                                 <li key={child.title}>
                                                                     <Link
                                                                         href={child.href || "#"}
                                                                         onClick={() => setMobileOpen(false)}
-                                                                        className="block text-gray-700 hover:underline"
+                                                                        className="block hover:text-[#d8b661] py-1" // HOVER AJUSTÉ
                                                                     >
                                                                         {child.title}
                                                                     </Link>
@@ -191,7 +191,7 @@ export default function NavMenu() {
                                             <Link
                                                 href={item.href || "#"}
                                                 onClick={() => setMobileOpen(false)}
-                                                className="block text-lg font-medium hover:text-blue-600"
+                                                className="block text-xl font-medium hover:text-[#d8b661] py-1" // HOVER AJUSTÉ
                                             >
                                                 {item.title}
                                             </Link>
