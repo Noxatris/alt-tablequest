@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -206,7 +206,7 @@ export default function Home() {
           </p>
 
           <p>
-            Rendez-vous le <time dateTime="2025-10-30" className="text-[1.1em] text-[#d8b661]">jeudi 30 octobre</time> à <time className="text-[1.1em] text-[#d8b661]">20h</time> pour vivre la suite de ses aventures en direct sur{" "}
+            Rendez-vous le <time dateTime="2025-10-30" className="text-[1.1em] text-[#d8b661]">jeudi 13 novembre</time> à <time className="text-[1.1em] text-[#d8b661]">20h</time> pour vivre la suite de ses aventures en direct sur{" "}
             <Link href="/" className="underline hover:text-[#d8b661] transition-all">
               la chaîne Twitch d’AlphaCast
             </Link>.
